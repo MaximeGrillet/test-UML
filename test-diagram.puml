@@ -1,0 +1,27 @@
+@startuml Test
+left to right direction
+
+actor Utilisateur as u
+
+package Admin {
+actor CEO as ceo
+actor CTO as cto 
+}
+
+package SiteVitrine {
+  usecase "Exposer ses projets" as UC1
+  usecase "Visiter les projets" as UC2
+  usecase "Afficher le nom de la techno" as UC3
+  usecase "Infos de contact" as UC4
+  usecase "Projets Back" as UC5
+  usecase "Projets Front" as UC6
+}
+ceo --> UC1 : Rédige
+u --> UC2
+u --> UC4
+UC2 --> UC5
+UC2 --> UC6
+UC3 --> UC1
+ceo --> UC4 : Diffuse
+cto --> UC3 
+@enduml
