@@ -9,24 +9,51 @@ actor CTO as cto
 }
 
 ceo --> u
-package SiteVitrine {
-  usecase "Visiter les projets" as UC2
-  usecase "Projets Back" as UC5
-  usecase "Projets Front" as UC6
+package HomePage {
+  usecase "Consulter le projet" as UC2
+  usecase "Projet Back" as UC5
+  usecase "Projet Front" as UC6
+  usecase "Infos de contact" as UC4
+  usecase "Réseaux soiciaux" as UC7
 }
 
-  usecase "Infos de contact" as UC4
+package Projet-SinglePage{
+  usecase "Nom du projet" as N1
+  usecase "Descrition" as N2
+  usecase "Technologie" as N3
+}
+
+package networks{
+  usecase "X" as x
+  usecase "Instagram" as i 
+  usecase "Github" as g 
+  usecase "LinkedIn" as l
+}
 
 package backOffice{
   usecase "Rediger ses projets" as UC1
   usecase "Afficher le nom de la techno" as UC3
 }
+
 ceo --> UC1 
 UC1 --> UC2
-u --> UC2
+u --> UC2 
 u --> UC4
+u --> UC7
 UC2 --> UC5
 UC2 --> UC6
 UC3 --> UC1
 cto --> UC3 
+
+UC5 --> N1
+UC5 --> N2
+UC5 --> N3
+UC6 --> N1
+UC6 --> N2
+UC6 --> N3
+
+UC7 --> x
+UC7 --> i
+UC7 --> l
+UC7 --> g
 @enduml
