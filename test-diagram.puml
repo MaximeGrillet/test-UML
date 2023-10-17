@@ -3,8 +3,6 @@ left to right direction
 
 actor Utilisateur as u
 
-test
-
 package Admin {
 actor CEO as ceo
 actor CTO as cto 
